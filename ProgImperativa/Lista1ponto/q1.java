@@ -12,18 +12,18 @@ public class q1 {
     }
 
     public static void Consumo(int d){
-        int [] dias = new int[d];
+        double [] dias = new double[d];
         int consumototal = 0;
         for(int i = 0; i < dias.length; i++){
             dias[i] = sc.nextInt();
             consumototal += dias[i];
         }
-        float consumomedio = (consumototal / d);
+        double consumomedio = (double)consumototal/d;
 
-        int j = 0;
+
         int contador = 0;
 
-        for(j = 0; j < dias.length; j++){
+        for(int j = 0; j < dias.length; j++){
             if (dias[j] > consumomedio){
                 contador ++;
             }
