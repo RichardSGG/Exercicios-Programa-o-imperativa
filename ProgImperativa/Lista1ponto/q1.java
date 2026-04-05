@@ -1,7 +1,7 @@
 package Lista1ponto;
 import java.util.Scanner;
 
-public class q1 {
+public class Q1 {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 

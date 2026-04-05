@@ -1,6 +1,6 @@
 package Lista1ponto;
 import java.util.Scanner;
-public class q3 {
+public class Q3 {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 

@@ -1,7 +1,7 @@
 package Lista1ponto;
 import java.util.Scanner;;
 
-public class q2{
+public class Q2{
 static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -36,14 +36,6 @@ static Scanner sc = new Scanner(System.in);
             menor = alunos[i];
         }
     }
-    
-
-    
-
-
-
-
-
 
     System.out.println("maior nota: " + maior );
     System.out.println("menor nota: " + menor );
