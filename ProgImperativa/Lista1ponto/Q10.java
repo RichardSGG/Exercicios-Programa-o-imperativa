@@ -21,20 +21,16 @@ public class Q10 {
       }
     }
     int maiorl = 0;
-    int j = 0;
     for (int i = 0; i < l; i++) {
-      if (linhas[maiorl] < linhas[j]) {
-        maiorl = j;
+      if (linhas[maiorl] < linhas[i]) {
+        maiorl = i;
       }
-      j++;
     }
     int maiorc = 0;
-    j = 0;
     for (int i = 0; i < c; i++) {
-      if (colunas[maiorc] < colunas[j]) {
-        maiorc = j;
+      if (colunas[maiorc] < colunas[i]) {
+        maiorc = i;
       }
-      j++;
     }
 
     for (int i = 0; i < l; i++) {
@@ -45,7 +41,7 @@ public class Q10 {
       System.out.printf("Soma da Coluna %d: %d%n", i, colunas[i]);
     }
     System.out.println("Linha com a maior soma: " + maiorl);
-    System.out.println("Linha com a maior soma: " + maiorc);
+    System.out.println("Coluna com a maior soma: " + maiorc);
 
   }
 }
