@@ -15,56 +15,62 @@ public class Q17 {
         for (int i = 0; i < valores.length; i++) {
             for (int j = 0; j < valores[0].length; j++) {
                 valores[i][j] = banco.nextInt();
-                
-
             }
         }
+
         int somal = 0;
-        int somala = 0;
-        int somac = 0;
-        int somaca = 0;
         int linha = 0;
-        int coluna = 0;
+        boolean primeiraLinha = true;
 
-        for(int i = 0; i < valores.length; i++){
-            for(int j = 0;j < valores[0].length;j++){
-                somala += valores[i][j];
-                if(somala> somal){
-                somal = somala;
+        for (int i = 0; i < l; i++) {
+            int[] linhaAtual = new int[c];
+            for (int j = 0; j < c; j++) {
+                linhaAtual[j] = valores[i][j];
+            }
+            int melhorLinhaAtual = maiorSomaContigua(linhaAtual);
+            if (primeiraLinha || melhorLinhaAtual > somal) {
+                primeiraLinha = false;
+                somal = melhorLinhaAtual;
                 linha = i;
-                }
-                if(somala < 0){
-                somala = 0;
-                }
-            }
-            somala = 0;
-        }
-
-        for(int j = 0;j < c;j++){
-            somaca = 0 ;
-            for(int i = 0; i < l; i++){
-                somaca += valores[i][j];
-                if(somaca > somac){
-                    somac = somaca;
-                    coluna = j;
-                }
-                if(somaca < 0){
-                    somaca = 0;
-                }
             }
         }
-    
-        
 
-        
+        int somac = 0;
+        int coluna = 0;
+        boolean primeiraColuna = true;
 
-        
+        for (int j = 0; j < c; j++) {
+            int[] colunaAtual = new int[l];
+            for (int i = 0; i < l; i++) {
+                colunaAtual[i] = valores[i][j];
+            }
+            int melhorColunaAtual = maiorSomaContigua(colunaAtual);
+            if (primeiraColuna || melhorColunaAtual > somac) {
+                primeiraColuna = false;
+                somac = melhorColunaAtual;
+                coluna = j;
+            }
+        }
 
         System.out.println("Maior soma contigua em linha: " + somal);
         System.out.println("Linha da maior soma contigua: " + linha);
         System.out.println("Maior soma contigua em coluna: " + somac);
         System.out.println("Coluna da maior soma contigua: " + coluna);
 
+    }
+
+    public static int maiorSomaContigua(int[] valores) {
+        int melhor = valores[0];
+        int atual = valores[0];
+
+        for (int i = 1; i < valores.length; i++) {
+            atual = Math.max(valores[i], atual + valores[i]);
+            if (atual > melhor) {
+                melhor = atual;
+            }
+        }
+
+        return melhor;
     }
 }
 

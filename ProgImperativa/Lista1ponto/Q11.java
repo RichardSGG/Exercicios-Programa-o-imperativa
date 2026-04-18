@@ -19,20 +19,19 @@ public class Q11 {
             }
         }
 
-      
         for (int i = 0; i < c; i++) {
             for (int j = 0; j < l; j++) {
-            nms2[i][j] = nms[j][i];
+                nms2[i][j] = nms[j][i];
             }
         }
 
-        System.out.println("Matriz transporta: ");
-        for(int i = 0; i < c; i++){
-            for(int j = 0; j < l; j++){
+        System.out.println("Matriz transposta:");
+        for (int i = 0; i < c; i++) {
+            for (int j = 0; j < l; j++) {
                 System.out.print(nms2[i][j] + " ");
-            } 
+            }
             System.out.println();
         }
-        
+
     }
 }

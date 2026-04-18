@@ -32,20 +32,16 @@ public class Q5 {
         int md = 0;
 
         for (int i = 1; i < prod.length; i++) {
-            int Diferencaatual = (prod[i] - prod[i - 1]);
-            if (Diferencaatual > md) {
-                md = Diferencaatual;
+            int diferencaAtual = prod[i] - prod[i - 1];
+            if (diferencaAtual > md) {
+                md = diferencaAtual;
             }
 
         }
 
-        if (md <= 0) {
-            System.out.println("Diferença: " + 0);
-        } else {
-            System.out.println("Maior produção: " + maior);
-            System.out.println("Menor produção: " + menor);
-            System.out.println("Maior produção: " + md);
-        }
+        System.out.println("Maior producao: " + maior);
+        System.out.println("Menor producao: " + menor);
+        System.out.println("Maior crescimento consecutivo: " + md);
 
     }
 }

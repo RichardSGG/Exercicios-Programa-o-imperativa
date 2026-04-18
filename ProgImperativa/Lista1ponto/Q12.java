@@ -34,6 +34,7 @@ public class Q12 {
                     a += 1;
                 }
             }
+            System.out.println("Matriz reorganizada:");
             for (int i = 0; i < r; i++) {
                 for (int j = 0; j < s; j++) {
                     System.out.print(valores2[i][j] + " ");
@@ -42,7 +43,7 @@ public class Q12 {
             }
 
         } else {
-            System.out.println("Reorganização impossível");
+            System.out.println("Reorganizacao impossivel");
         }
 
     }
