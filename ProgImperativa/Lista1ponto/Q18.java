@@ -14,7 +14,6 @@ public class Q18 {
         int picos = 0;
         int maior = 0;
         int posicao[] = new int[2];
-        boolean encontrouPico = false;
         for (int i = 0; i < sensor.length; i++) {
             for (int j = 0; j < sensor[0].length; j++) {
                 sensor[i][j] = sc.nextInt();
@@ -23,30 +22,24 @@ public class Q18 {
 
         for (int i = 0; i < sensor.length; i++) {
             for (int j = 0; j < sensor[0].length; j++) {
-                boolean pico = true;
+                boolean Pico = true;
                 if (i > 0 && sensor[i][j] <= sensor[i - 1][j])
-                    pico = false;
+                    Pico = false;
                 if (i < l - 1 && sensor[i][j] <= sensor[i + 1][j])
-                    pico = false;
+                    Pico = false;
                 if (j > 0 && sensor[i][j] <= sensor[i][j - 1])
-                    pico = false;
+                    Pico = false;
                 if (j < c - 1 && sensor[i][j] <= sensor[i][j + 1])
-                    pico = false;
-                if (pico) {
+                    Pico = false;
+                if (Pico) {
                     picos++;
-                    if (!encontrouPico || sensor[i][j] > maior) {
-                        encontrouPico = true;
+                    if (sensor[i][j] > maior) {
                         maior = sensor[i][j];
                         posicao[0] = i;
                         posicao[1] = j;
                     }
                 }
             }
-        }
-        if (!encontrouPico) {
-            posicao[0] = -1;
-            posicao[1] = -1;
-            maior = 0;
         }
         System.out.println("Quantidade de pontos de pico: " + picos);
         System.out.printf("Posicao do maior ponto de pico: %d %d%n", posicao[0], posicao[1]);

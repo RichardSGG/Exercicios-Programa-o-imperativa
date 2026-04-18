@@ -7,13 +7,12 @@ public class Q15 {
 
     public static void Loggi(int n) {
         int distancias[][] = new int[n][n];
+        String tem0 = "não";
         int maior = 0;
         int[] posicao = new int[2];
         int somaA = 0;
         int soma = 0;
         int linha = 0;
-        boolean diagonalComZeros = true;
-        boolean encontrouForaDiagonal = false;
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -32,20 +31,23 @@ public class Q15 {
         }
 
         for (int i = 0; i < n; i++) {
-            if (distancias[i][i] != 0) {
-                diagonalComZeros = false;
-            }
             for (int j = 0; j < n; j++) {
-                if (i != j && (!encontrouForaDiagonal || distancias[i][j] > maior)) {
-                    encontrouForaDiagonal = true;
-                    maior = distancias[i][j];
-                    posicao[0] = i;
-                    posicao[1] = j;
+                if (i == j && distancias[i][j] == 0) {
+                    tem0 = "sim";
                 }
+                if (i != j) {
+                    if (maior < distancias[i][j]) {
+                        maior = distancias[i][j];
+                        posicao[0] = i;
+                        posicao[1] = j;
+                    }
+                }
+
             }
+
         }
 
-        System.out.println("Diagonal principal com zeros: " + (diagonalComZeros ? "sim" : "nao"));
+        System.out.println("Diagonal principal com zeros: " + tem0);
         System.out.println("Maior valor fora da diagonal: " + maior + " (" + posicao[0] + "," + posicao[1] + ")");
         System.out.println("Linha com menor soma: " + linha);
     }
